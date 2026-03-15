@@ -1,0 +1,10 @@
+# SQL Book Recommendation System
+
+This project is a simple book recommendation system built using SQL, Python and HTML.
+
+Features:
+- Store books
+- User ratings
+- Reviews
+- Popular book queries
+- Basic recommendation system
