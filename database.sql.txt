@@ -1,0 +1,43 @@
+CREATE TABLE users (
+    user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL,
+    email TEXT UNIQUE
+);
+
+CREATE TABLE books (
+    book_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    author TEXT,
+    genre TEXT,
+    year INTEGER
+);
+
+CREATE TABLE ratings (
+    rating_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    book_id INTEGER,
+    rating INTEGER,
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (book_id) REFERENCES books(book_id)
+);
+
+INSERT INTO users (username,email)
+VALUES
+('Ali','ali@gmail.com'),
+('Ayse','ayse@gmail.com'),
+('Mehmet','mehmet@gmail.com');
+
+INSERT INTO books (title,author,genre,year)
+VALUES
+('1984','George Orwell','Dystopia',1949),
+('Harry Potter','J.K Rowling','Fantasy',1997),
+('The Hobbit','J.R.R Tolkien','Fantasy',1937);
+
+SELECT 
+books.title,
+AVG(ratings.rating) as average_rating
+FROM books
+JOIN ratings 
+ON books.book_id = ratings.book_id
+GROUP BY books.title
+ORDER BY average_rating DESC;
