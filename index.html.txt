@@ -1,0 +1,30 @@
+<h2>Add New Book</h2>
+
+<form>
+    <label>Book Title</label><br>
+    <input type="text" name="title"><br><br>
+
+    <label>Author</label><br>
+    <input type="text" name="author"><br><br>
+
+    <label>Genre</label><br>
+    <input type="text" name="genre"><br><br>
+
+    <label>Year</label><br>
+    <input type="number" name="year"><br><br>
+
+    <button type="submit">Add Book</button>
+</form>
+
+<hr>
+
+<h2>Top Rated Books</h2>
+
+<ul>
+    <li>1984 - 4.5</li>
+    <li>Harry Potter -  4.3</li>
+    <li>The Hobbit - 4.2</li>
+</ul>
+
+</body>
+</html>
